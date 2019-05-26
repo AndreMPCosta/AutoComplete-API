@@ -142,6 +142,9 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(trie.get_words('ub'), ['uber driver', 'ubersync'])
 
 
+# Loading for the flask app
+trie = Trie(get_words('test_files/6500titles.csv'))
+
 if __name__ == '__main__':
     unittest.main()
 
