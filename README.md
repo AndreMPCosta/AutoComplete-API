@@ -32,6 +32,7 @@ It is configured to run on the default port(5000), you can change that on the Do
 The app is loading the 6500 titles csv file. 
 
 You can use *Postman* or your *Browser* to make a simple query, since the GET verb is being used on this case.
+
 **Sample call:**
 ```
 http://localhost:5000/query/your_prefix_here
