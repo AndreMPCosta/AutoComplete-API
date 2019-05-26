@@ -2,59 +2,68 @@
 
 ## Autocomplete API
 
-You are asked to implement an Autocomplete API that helps users searching for apps by
+Autocomplete API that helps users searching for apps by
 their name. When writing the name of an app, the possible results should be shown to
 the user. For example, if the user is inputting *Fac*, two possible choices are
 *Facebook* and *Facebook Lite*.
 
-The challenge is composed of 2 main components:
-
-* The autocomplete system
-* An API (a microservice/web service) that receives a query and returns the possible
-results for that query
-
-The autocomplete system can be seen as a composition of 2 subcomponents:
-
-* A data structure to store the possible words (the corpus). This data structure
-should enable quick lookups of words.
-* A search algorithm that given the above data structure and a query, should
-output the possible words
-
-The microservice/web service should be simple enough as to just receive as input a
+The microservice/web service receives as input a
 user query, ask the autocomplete system for the possible results and send them back.
 
 
-## What we expect to receive from you
+## Deployment
 
-When you are ready to submit your answer to this challenge, you should set up a
-public GitHub repository with everything we ask below:
+**Building from source**
 
-* The autocomplete system
-* The API to query the autocomplete system
-* Set up a virtual machine environment using **docker-compose** to run the test 
-task including some short documentation
-* **Automated tests** covering as much of the code as possible
-* **Documentation** with instructions regarding how to set up the system and how
-to test it
-* Please build the application in small logical steps and commit each step to
- a **Github** repository so that we can see how you approach the task
+Clone this repository
+```bash
+git clone https://github.com/AndreMPCosta/AptoideChallenge.git
+cd AptoideChallenge
+```
 
+Inside the project directory, run the command below. This will do all the steps necessary to build and run.
+```bash
+sudo bash start.sh
+```
 
-## Important remarks
+It is configured to run on the default port(5000), you can change that on the Dockerfile and on start.sh if you prefer another port.
 
-* The challenge should be done using **Python**
-* The corpus (i.e. possible words that the autocomplete system can output) of the
-autocomplete system is **set in the setup/loading time** and remains **unchanged during runtime**
-* The autocomplete system can have a **high setup/loading time** but should be **very fast at runtime**
-* It is more important to have **less code and have it completely tested** with automated
-tests than to have a **lot of code without automated tests** to ensure its quality
+## Usage
+The app is loading the 6500 titles csv file. 
 
+You can use *Postman* or your *Browser* to make a simple query, since the GET verb is being used on this case.
+**Sample call:**
+```
+http://localhost:5000/query/your_prefix_here
+```
+**Example:**
+```
+http://localhost:5000/query/fac
+```
+You should get this response as JSON:
+```json
+{
+results: [
+"facebook",
+"facebook lite",
+"facebook pages manager",
+"facebook groups",
+"facebook apps market",
+"facebook video download",
+"face changer",
+"face changer 2",
+"face time calling guide",
+"face swap",
+"faceapp",
+"facelock for apps",
+"facelook for facebook",
+"facetune",
+"faceswap face swap live"
+]
+}
+```
 
-## Helpers
-
-* We're providing 2 corpus in the [*test_files*](./test_files) directory with different sizes that can be used for testing
-* Regarding the autocomplete system's data structure, search for **Trie** and **Tree-like data structures**
-* As for the autocomplete system's search algorithm, search for **BFS/DFS algorithms**
-* For the API and web server, read about **Flask** (Python module)
-* For the automated tests, read about **unittest** (Python module) and
-**docstrings**
+This app is also deployed at, for testing purposes:
+```
+http://188.166.18.196:5000
+```
