@@ -1,3 +1,4 @@
+import unittest
 from csv import reader
 from typing import List
 
@@ -126,10 +127,21 @@ class Trie:
         return self._build_words(next_node, prefix)
 
 
+class TestMethods(unittest.TestCase):
+
+    def test_190titles_csv(self):
+        trie = Trie(get_words('test_files/190titles.csv'))
+        self.assertEqual(trie.get_words('fac'), ['facebook', 'facebook lite', 'facebook pages manager'])
+
+    def test_manual_input(self):
+        trie = Trie(['hi', 'hello', 'howdy', 'help', 'hell', 'hello be'])
+        self.assertEqual(trie.get_words('he'), ['hello', 'hello be', 'hell', 'help'])
+
+    def test_6500titles_csv(self):
+        trie = Trie(get_words('test_files/6500titles.csv'))
+        self.assertEqual(trie.get_words('ub'), ['uber driver', 'ubersync'])
+
+
 if __name__ == '__main__':
-    trie = Trie(get_words('test_files/6500titles.csv'))
-    # print(trie)
-    print(trie.get_words('fac'))
-    trie = Trie(['hi', 'hello', 'howdy', 'help', 'hell', 'hello be'])
-    # print(trie)
-    print(trie.get_words('he'))
+    unittest.main()
+
