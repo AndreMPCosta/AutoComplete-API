@@ -29,7 +29,7 @@ class Node:
         self.data = data
         self.children = {}
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self.data) + str(self.children)
 
 
@@ -46,7 +46,7 @@ class Trie:
         end: node
             The final node for a word, it will be called 'End'
         """
-    def __init__(self, words):
+    def __init__(self, words: List[str]):
         """
         Parameters
         ----------
@@ -108,7 +108,7 @@ class Trie:
 
         return output
 
-    def get_words(self, prefix):
+    def get_words(self, prefix: str) -> List[str]:
         """Find the starting node (after the last letter of the prefix)
 
         Parameters

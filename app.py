@@ -1,11 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, Response
 from autocomplete import trie
 
 app = Flask(__name__)
 
 
 @app.route('/query/<string:query>')
-def execute_query(query):
+def execute_query(query: str) -> Response:
     return jsonify({'results': trie.get_words(query)})
 
 
