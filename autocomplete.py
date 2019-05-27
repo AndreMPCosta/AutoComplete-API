@@ -130,16 +130,16 @@ class Trie:
 class TestMethods(unittest.TestCase):
 
     def test_190titles_csv(self):
-        trie = Trie(get_words('test_files/190titles.csv'))
-        self.assertEqual(trie.get_words('fac'), ['facebook', 'facebook lite', 'facebook pages manager'])
+        test_trie = Trie(get_words('test_files/190titles.csv'))
+        self.assertEqual(test_trie.get_words('fac'), ['facebook', 'facebook lite', 'facebook pages manager'])
 
     def test_manual_input(self):
-        trie = Trie(['hi', 'hello', 'howdy', 'help', 'hell', 'hello be'])
-        self.assertEqual(trie.get_words('he'), ['hello', 'hello be', 'hell', 'help'])
+        test_trie = Trie(['hi', 'hello', 'howdy', 'help', 'hell', 'hello be'])
+        self.assertEqual(test_trie.get_words('he'), ['hello', 'hello be', 'hell', 'help'])
 
     def test_6500titles_csv(self):
-        trie = Trie(get_words('test_files/6500titles.csv'))
-        self.assertEqual(trie.get_words('ub'), ['uber driver', 'ubersync'])
+        test_trie = Trie(get_words('test_files/6500titles.csv'))
+        self.assertEqual(test_trie.get_words('ub'), ['uber driver', 'ubersync'])
 
 
 # Loading for the flask app
