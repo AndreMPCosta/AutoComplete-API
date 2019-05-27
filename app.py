@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/query/<string:query>')
 def execute_query(query: str) -> Response:
-    return jsonify({'results': trie.get_words(query)})
+    return jsonify({'results': trie.get_words(query.lower())})
 
 
 if __name__ == '__main__':
