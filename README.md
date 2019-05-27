@@ -21,7 +21,7 @@ git clone https://github.com/AndreMPCosta/AptoideChallenge.git
 cd AptoideChallenge
 ```
 
-Inside the project directory, run the command below. This will do all the steps necessary to build and run.
+Inside the project directory, run the command below. This will do all the steps necessary to build and run as a Docker Image.
 ```bash
 sudo bash start.sh
 ```
