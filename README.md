@@ -15,8 +15,8 @@ user query, ask the autocomplete system for the possible results and send them b
 
 Clone this repository
 ```bash
-git clone https://github.com/AndreMPCosta/AptoideChallenge.git
-cd AptoideChallenge
+git clone https://github.com/AndreMPCosta/AutoComplete-API.git
+cd AutoComplete-API
 ```
 
 Inside the project directory, run the command below. This will do all the steps necessary to build and run as a Docker Image.
