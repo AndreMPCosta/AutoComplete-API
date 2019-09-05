@@ -8,6 +8,8 @@ the user. For example, if the user is inputting *Fac*, two possible choices are
 The microservice/web service receives as input a
 user query, ask the autocomplete system for the possible results and send them back.
 
+A Trie structure is used for faster responses of the API (https://en.wikipedia.org/wiki/Trie).
+
 
 ## Deployment
 
