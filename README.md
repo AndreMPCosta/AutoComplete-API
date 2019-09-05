@@ -1,6 +1,4 @@
-# Aptoide - Python Challenge
-
-## Autocomplete API
+# Autocomplete API
 
 Autocomplete API that helps users searching for apps by
 their name. When writing the name of an app, the possible results should be shown to
