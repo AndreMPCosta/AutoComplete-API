@@ -61,8 +61,3 @@ results: [
 ]
 }
 ```
-
-This app is also deployed at, for testing purposes:
-```
-http://188.166.18.196:5000
-```
